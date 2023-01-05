@@ -1,13 +1,13 @@
 # README
 
-Hello PETAL team, this an API application.
+Hello PETAL team, this is the Pokemon's API application.
 
 Don't forget to create the DB, launch the migrations, seed the DB and launch the server.
 
-Users and authorizations had been added to the application, thanks to Devise, Pundit and simple_token_authentication gems.
+Users and authorizations had been added to the application, thanks to devise, pundit and simple_token_authentication gems.
 A token is automatically attached to the user once he has been saved on the DB.
 
-5 actions/routes has been created - that you can visit though to Postman:
+5 actions/routes has been created - that you can visit though the Postman app:
 
 - INDEX - Get all the pokemons: http://localhost:3000/api/v1/pokemons
 
@@ -35,5 +35,10 @@ A token is automatically attached to the user once he has been saved on the DB.
    -H 'X-User-Token: User authentication_token' \
    http://localhost:3000/api/v1/pokemons/1
 
-NB: the CREATED / UPDATE / DELETE actions need an authenticate user (an email and a token have to be added to the request headers).
+NB: the CREATE / UPDATE / DELETE actions need an authenticate user (an email and a token have to be added to the request headers).
 The UPDATE / DELETE actions can be processed only by the user who created the pokemon.
+
+Let me know if you have any questions!
+Have a good day,
+
+Sophia Benmoussa
