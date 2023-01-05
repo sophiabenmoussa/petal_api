@@ -1,24 +1,39 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Hello PETAL team, this an API application.
 
-Things you may want to cover:
+Don't forget to create the DB, launch the migrations, seed the DB and launch the server.
 
-* Ruby version
+Users and authorizations had been added to the application, thanks to Devise, Pundit and simple_token_authentication gems.
+A token is automatically attached to the user once he has been saved on the DB.
 
-* System dependencies
+5 actions/routes has been created - that you can visit though to Postman:
 
-* Configuration
+- INDEX - Get all the pokemons: http://localhost:3000/api/v1/pokemons
 
-* Database creation
+- SHOW - Get a specific pokemon: http://localhost:3000/api/v1/pokemons/1
 
-* Database initialization
+- CREATE a new pokemon:
+  curl -i -X POST \
+   -H 'Content-Type: application/json' \
+   -H 'X-User-Email: User email' \
+   -H 'X-User-Token: User authentication_token' \
+   -d '{ "pokemon": { "name": "New pokemon", "generation": "7" } }' \
+   http://localhost:3000/api/v1/pokemons
 
-* How to run the test suite
+- UPDATE a specific pokemon:
+  curl -i -X PATCH \
+   -H 'Content-Type: application/json' \
+   -H 'X-User-Email: User email' \
+   -H 'X-User-Token: User authentication_token' \
+   -d '{ "pokemon": { "name": "New name" } }' \
+   http://localhost:3000/api/v1/pokemons/1
 
-* Services (job queues, cache servers, search engines, etc.)
+- DELETE a specific pokemon:
+  curl -i -X DELETE \
+   -H 'X-User-Email: User email' \
+   -H 'X-User-Token: User authentication_token' \
+   http://localhost:3000/api/v1/pokemons/1
 
-* Deployment instructions
-
-* ...
+NB: the CREATED / UPDATE / DELETE actions need an authenticate user (an email and a token have to be added to the request headers).
+The UPDATE / DELETE actions can be processed only by the user who created the pokemon.

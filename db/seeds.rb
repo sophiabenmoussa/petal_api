@@ -4,8 +4,8 @@ puts "Starting the seed process"
 puts '-------------------------------'
 
 puts "Creating first User."
-User.create!(email: 'sophia@benmoussa.me', password: '123456')
-puts "First User created successfully."
+User.create!(email: 'user@petal.com', password: '123456')
+puts "The User: 'user@petal.com' has been created successfully."
 
 puts '-------------------------------'
 
