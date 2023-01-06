@@ -8,4 +8,7 @@ Rails.application.routes.draw do
   end
 
   root to: "pages#home"
+
+  resources :pokemons, only: [ :index ]
+
 end

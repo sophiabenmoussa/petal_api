@@ -38,6 +38,8 @@ A token is automatically attached to the user once he has been saved on the DB.
 NB: the CREATE / UPDATE / DELETE actions need an authenticate user (an email and a token have to be added to the request headers).
 The UPDATE / DELETE actions can be processed only by the user who created the pokemon.
 
+A list of all pokemon has also been add on: http://localhost:3000/pokemons
+
 Let me know if you have any questions!
 Have a good day,
 

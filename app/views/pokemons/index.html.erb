@@ -1,0 +1,41 @@
+
+<div class="container">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Name</th>
+        <th scope="col">Type 1</th>
+        <th scope="col">Type 2</th>
+        <th scope="col">Total</th>
+        <th scope="col">Generation</th>
+        <th scope="col">Legendary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @pokemons.each do |pokemon| %>
+        <tr>
+          <th scope="row"><%=pokemon.file_id %></th>
+          <td><%=pokemon.name %></td>
+          <td><%=pokemon.type_1 %></td>
+          <td><%=pokemon.type_2 %></td>
+          <td><%=pokemon.total %></td>
+          <td><%=pokemon.generation %></td>
+          <td><%=pokemon.legendary %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+  <nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <% pv_page =  @page.eql?(0)? @page : @page - 1 %>
+        <%= link_to "Previous", pokemons_path(page: pv_page), class: "page-link" %>
+      </li>
+
+      <li class="page-item">
+        <%= link_to "Next", pokemons_path(page: @page + 1), class: "page-link" %>
+      </li>
+    </ul>
+  </nav>
+</div>
