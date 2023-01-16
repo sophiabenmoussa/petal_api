@@ -14,11 +14,10 @@ RSpec.describe 'Pokemons', type: :request do
       user_id: my_user.id) }
 
     before do
-
       get '/api/v1/pokemons'
     end
 
-    it 'returns all posts' do
+    it 'returns all pokemons' do
       expect(json.size).to eq(2)
     end
 
